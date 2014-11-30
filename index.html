@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<meta charset="utf-8"/>
+<!-- Allows adaptive design from PureCSS framework and compatible with IE -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="adapted from PureCSS -- adaptive style template."/>
+    <title>CenterCityScience</title>
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+<!--[if lte IE 8]>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-old-ie-min.css">
+<![endif]-->
+<!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
+<!--<![endif]-->
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="css/layouts/marketing-old-ie.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="css/layouts/marketing.css">
+    <!--<![endif]-->
+<head>
+  <!-- Load jquery library -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> 
+  <!-- Load Google Charts visualizations library -->
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <!-- Load Leaflet Mapping visualizations library -->
+  <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+  <!-- Load Esri Leaflet library from CDN -->
+  <script src="http://cdn-geoweb.s3.amazonaws.com/esri-leaflet/1.0.0-rc.4/esri-leaflet.js"></script>
+  <!-- Include Leaflet.heat via rawgit.com, do not use in production -->
+  <script src="https://rawgit.com/Leaflet/Leaflet.heat/gh-pages/dist/leaflet-heat.js"></script>
+
+<!-- Load Heatmap Feature Layer from CDN -->
+<script src="http://cdn-geoweb.s3.amazonaws.com/esri-leaflet-heatmap-feature-layer/1.0.0-rc.1/esri-leaflet-heatmap-feature-layer.js"></script>
+
+  <!-- Load custom script -->
+  <script src="./script.js"></script>
+
+  <!-- Stylesheets to allow PureCSS styling, Leaflet map styling, Google Fonts, and custom-->
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css"> 
+  <link href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css" rel="stylesheet" > 
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css">
+  <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+<!-- Header allows other sections to roll over -->
+<div class="header">
+    <div class="home-menu pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
+      <ul>
+          <li><a href='about.html'></a><li>
+      </ul>
+    </div>
+</div>
+
+
+<div class="splash-container">
+    <div class="splash">
+        <h1 class="splash-head">Center City Science</h1>
+        <p class="splash-subhead" style="font-weight: bold; text-shadow: 3px 3px 10px black">
+            Earth Scale from a Philly Perspective
+        </p>
+        <p class="splash-subhead" style="font-weight: bold; text-shadow: 3px 3px 10px black">
+            Scroll to Begin
+        </p>
+    </div>
+</div>
+
+<div class="content-wrapper">
+    <div class="content">
+        <h2 class="content-head is-center">"Outer space is not far at all; <br>It's only one hour away by car if your car could go straight up!"<br>Sir Fred Hoyle, Astronomer</h2>
+      <p>How high is space? How deep is the ocean? This site allows you to visualize such distances on the surface of the planet. It also calculates the time to travel to these places (if you could drive straight up/down or over oceans).<br><br>The circles below show the extents of different levels of the earth's atmosphere. Click on a circle to learn more. Make sure to use the zoom on the upper left to see all the layers. Then, by selecting a different system from the box in the upper right, explore what other distances look like on the face of the earth, including the distance to the deepest part of the ocean (surprisingly small) and the radius of Jupiter (unsurprisingly big).<br><br>The starting location is the Franklin Institute (a Philadelphia center of science). To gain an idea of scale, the map also shows current locations of SEPTA trains as well (they move in almost real-time). </p>
+      <div id='pure-g'>
+            <div class="pure-u-1-1" id="map" >
+              <div id="basemaps-wrapper" class="leaflet-bar">
+              <select name="basemaps" id="basemaps">
+                <option value="Topographic">Topographic<options>
+                <option value="Streets">Streets</option>
+                <option value="NationalGeographic">National Geographic<options>
+                <option value="Oceans">Oceans<options>
+                <option value="Gray">Gray<options>
+                <option value="DarkGray">Dark Gray<options>
+                <option value="Imagery">Imagery<options>
+                <option value="ShadedRelief">Shaded Relief<options>
+              </select>
+              </div>
+      	    </div>
+        </div>
+        <p style="font-size: 40%;">Descriptions of layers adapted (or copied) from <a href="http://en.wikipedia.org/">Wikipedia</a> articles, associated with each layer of the layers of the earth, atmosphere, and ocean, which are released under the <a href="http://creativecommons.org/licenses/by-sa/3.0/">CCA-SA 3.0</a>.</p>
+    </div>
+
+
+  <div class="ribbon l-box-lrg pure-g">
+    <div class="pure-u-1-1">
+          <h2 class="content-head content-head-ribbon" style="text-align: center">Travel time to Earth's Core, Outer Space, or Beyond</h2>
+          <p style="font-family: 'Abel', sans-serif;">This section calculates the time to various levels assuming the (constant) speed of a plane is about 250 meters per second (500 miles per hour), the speed of a car is about 25 meters per second (55 mph), and the speed of a bike is about 5 meters per second (10 mph). Of course you wouldn't actually be able to drive from Philadelphia, Pennsylvania to Bordeaux, France, but that's about the equivalent to the distance to the core of the earth.</p>
+      <div id='table_div' style="width: 100%; position: center;"></div>
+    </div>
+   
+  </div>
+
+
+  <div class="content">
+    <h2 class="content-head is-center">Time to Escape Each Layer</h2>
+
+    <p>This chart compares travel times to different layers for each system (earth layers, atmosphere, and ocean). Press the button to change systems. </p>
+
+         <div class="pure-g">
+          
+            <div class="pure-u-1 pure-u-lg-1-1 pure-u-md-1-1">
+                <div id="chart_div"></div>
+                <form><button id="b1" type="button" class="pure-button">Switch System</button></form>
+            </div>
+        </div>
+  </div>
+
+  <div class="footer l-box is-center">
+        Created by J. Calamia. <a href='about.html' target="_blank">About</a>
+  </div>
+</div>
+
+</body>
+</html>
