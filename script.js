@@ -193,6 +193,8 @@ $(document).ready(function() {
     L.marker(userLatLong).addTo(map).bindPopup("Your IP address says you are currently located at:<br /> " + userLocation.org + "<br/> " + userLocation.city + ", " + userLocation.region + ", " + userLocation.country + "<br>Note this could be off for Dynamic IPs.");
     }
 
+    map.locate();
+
     function onLocationFound(e) {
     var radius = e.accuracy / 2;
 
