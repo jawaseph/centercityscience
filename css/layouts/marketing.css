@@ -291,6 +291,8 @@ a.pure-button-primary {
     }
 
     .basemaps-wrapper {
+        width: 0px;
+        height: 0px;
         visibility: hidden;
     }
 
